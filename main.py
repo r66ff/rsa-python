@@ -2,25 +2,22 @@ import sys, random, string
 
 def random_gen():
     n = random.SystemRandom()
-    n = n.getrandbits(1)
+    n = n.getrandbits(7)
+    n = bin(n)
     return n
 
 def random_prime():
-    arr = []
-    arr.append(1)
-    for i in range(1,6):
+    n = random_gen()
+    while len(n) < 9:
         n = random_gen()
-        arr.insert(1, n)
-    arr.append(1)
-    arr = map(str, arr)
-    s = ''.join(arr)
-    s = int(s)
-    return s
+    if n[8] == '0':
+        n = n[:8] + '1'
+    return n
 
 def main():
     p = random_prime()
     q = random_prime()
-    print(type(p))
+    print(p)
     print(q)
 
 
