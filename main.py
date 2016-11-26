@@ -51,10 +51,12 @@ def is_prob_prime():
 def main():
     p = is_prob_prime()
     q = is_prob_prime()
-    while (p == None):
+    # check if overflow happened and check equality
+    while (p == None or p == q):
         p = is_prob_prime()
-    while (q == None):
+    while (q == None or p == q):
         q = is_prob_prime()
+
     print(p)
     print(q)
 
