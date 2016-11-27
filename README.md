@@ -1,2 +1,1 @@
-# rsa-python
-# runs on python 3
+# rsa-python python 3
