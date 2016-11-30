@@ -2,9 +2,12 @@ import sys, random, string
 
 def random_gen():
     n = random.SystemRandom()
-    n = n.getrandbits(1) # I thought getrandbits() would be a better solution than extracting the least significant bit
-    print('Line # 6:\nExtracting a random bit out of a random.SystemRandom object...\nExtracted random bit is: %s\n' % n)
-    return n
+    n = n.getrandbits(32)
+    b = bin(n)
+    b = b[-1]
+    b = int(b)
+    print('Line # 6:\nGenerating a random number: %s\nExtracted random bit is: %s\n' % (n, b))
+    return b
 
 def random_int():
     arr = []
