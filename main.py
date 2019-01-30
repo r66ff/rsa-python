@@ -1,7 +1,7 @@
-import sys, random, string
+import sys, random, string, secrets
 
 def random_gen():
-    n = random.SystemRandom()
+    n = secrets.SystemRandom()
     n = n.getrandbits(32)
     b = bin(n)
     b = b[-1]
